@@ -24,7 +24,7 @@ void main(){
       strcat(c,"4");
     }
     if (r==5){
-      strcat(c,"5");
+      strcat(c,"A");
     }
     if (r==6){
       strcat(c,"6");
@@ -39,19 +39,19 @@ void main(){
       strcat(c,"9");
     }
     if (r==10){
-      strcat(c,"A");
-    }
-    if (r==11){
       strcat(c,"B");
     }
-    if (r==12){
+    if (r==11){
       strcat(c,"C");
     }
-    if (r==13){
+    if (r==12){
       strcat(c,"D");
     }
-    if (r==14){
+    if (r==13){
       strcat(c,"E");
+    }
+    if (r==14){
+      strcat(c,"F");
     }
 
     strrev(c);

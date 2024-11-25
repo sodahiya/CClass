@@ -71,7 +71,7 @@ void main(){
     }
 
     int c;
-    printf("Enter the choics \n 1. Mean \n 2. Median \n 3. Mode \n");
+    printf("Enter the choices \n 1. Mean \n 2. Median \n 3. Mode \n");
     scanf("%d",&c);
 
     switch(c){
@@ -87,6 +87,9 @@ void main(){
         default:
             printf("Invalid Choice");
     }
+
+    printf("\n Sourabh Dahiya \n");
+    printf("2446001");
 }
 
 //

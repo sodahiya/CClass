@@ -25,11 +25,13 @@ void main(){
       }
     }
     if(flag ==1){
-      printf("The matrix is symmetric");
+      printf("The matrix is symmetric\n");
     }
     else {
-      printf("The matrix is not symmetric");
+      printf("The matrix is not symmetric\n");
     }
+  printf("Sourabh Dahiya \n");
+  printf("2446001");
 }
 //
 // Created by ASUS on 10/17/2024.

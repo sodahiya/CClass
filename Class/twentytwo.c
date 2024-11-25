@@ -37,7 +37,8 @@ int main(){
 
 
   printf("Password is: %s",pass);
-
+  printf("\nSourabh Dahiya \n");
+  printf("2446001");
 
   return 0;
 }

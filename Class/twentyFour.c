@@ -11,6 +11,8 @@ void main(){
     for(int i = 5;i>=0;i--) {
         printf("%s\n",str[i]);
     }
+    printf("Sourabh Dahiya \n");
+    printf("2446001");
 }
 
 //
