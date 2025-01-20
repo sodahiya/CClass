@@ -1,9 +1,18 @@
-#include <Stdio.h>
-
+#include <stdio.h>
 void main(){
-  int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+  int n;
+  printf("Enter number of elements in the array");
+  scanf("%d",&n);
+
+  int arr[n];
+
+  for(int i =0;i<n;i++){
+      printf("Enter the %d value ",(i+1));
+      scanf("%d",&arr[i]);
+  }
+
   int max = arr[0];
-  for(int i = 1; i<10; i++){
+  for(int i = 1; i<n; i++){
     if(arr[i]>max){
       max = arr[i];
     }

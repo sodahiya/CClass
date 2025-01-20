@@ -1,9 +1,19 @@
 #include <stdio.h>
+#include <limits.h>
 void main(){
-    int arr[10] = {1,2,3,4,5,6,7,8,9,10};
-    int max = arr[0];
-    int smax = arr[0];
-    for(int i = 1; i<10; i++){
+    int n;
+    printf("Enter Number of elements in the array");
+    scanf("%d",&n);
+
+  int arr[n];
+
+  for(int i =0;i<n;i++){
+      printf("Enter the %d value",(i+1));
+      scanf("%d",&arr[i]);
+  }
+    int max = INT_MIN;
+    int smax = INT_MIN;
+    for(int i = 0; i<n; i++){
         if(arr[i]>max){
             smax = max;
             max = arr[i];
@@ -13,6 +23,4 @@ void main(){
         }
     }
     printf("Second Largest element in the array is: %d", smax);
-}//
-// Created by ASUS on 1/15/2025.
-//
+}
