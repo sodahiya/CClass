@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 struct node{
-  struct node *prev;
+  node *prev;
   int data;
-  struct node *next;
+  node *next;
 };
 
 node* userInput(){
@@ -13,7 +13,7 @@ node* userInput(){
 
   scanf("%d",&n);
   printf("Enter the head data");
-  struct node *head = (struct node*)malloc(sizeof(struct node));
+  node *head = (struct node*)malloc(sizeof(struct node));
   scanf("%d",&head->data);
   head->prev = NULL;
 
@@ -21,7 +21,7 @@ node* userInput(){
 
   node *cur=NULL;
   for(int i=0;i<n-1;i++) {
-    cur = (struct node*)malloc(sizeof(struct node));
+    cur = (node*)malloc(sizeof(node));
 
     printf("Enter the data ");
     scanf("%d",&cur -> data);
@@ -37,7 +37,7 @@ node* userInput(){
   return head;
 }
 
-void printListForward(struct node *head) {
+void printListForward(node *head) {
   node *cur = head;
   while(cur != NULL) {
     printf("%d  ",cur->data);
@@ -45,7 +45,7 @@ void printListForward(struct node *head) {
   }
 }
 
-void printListBackward(struct node *tail) {
+void printListBackward(node *tail) {
   node *cur = tail;
   while(cur != NULL) {
     printf("%d  ",cur->data);
@@ -61,6 +61,29 @@ node* getTheLastNode(node * head) {
   return cur;
 }
 
+void insertAtEnd(node * head) {
+  node *tail = getTheLastNode(head);
+  node *newNode = (node*)malloc(sizeof(node));
+
+  printf("Enter the data ");
+  scanf("%d",&newNode->data);
+
+  tail->next = newNode;
+  newNode->prev = tail;
+  newNode->next = NULL;
+}
+
+void del(node* head,int index){
+  node * cur  =head;
+  for(int i=0;i<index;i++) {
+    cur = cur->next;
+  }
+
+  cur->prev->next = cur->next;
+  cur->next->prev = cur->prev;
+  free(cur);
+}
+
 int main(){
   node *ListHead  = userInput();
   printListForward(ListHead);
@@ -69,6 +92,21 @@ int main(){
 
   printf("\n");
 
+  printListBackward(ListTail);
+
+  insertAtEnd(ListHead);
+
+  printListForward(ListHead);
+  printf("\n");
+
+  ListTail = getTheLastNode(ListHead);
+  printListBackward(ListTail);
+  printf("\n");
+
+
+  del(ListHead,3);
+  printListForward(ListHead);
+  printf("\n");
   printListBackward(ListTail);
 
   return 0;
