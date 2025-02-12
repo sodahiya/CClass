@@ -13,7 +13,6 @@ void printArray(int arr[],int len){
     }
 }
 
-
 void main(){
 
     int n,ser,found = 0,del;

@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include<time.h>
 int binarySearch(int arr[],int toFind,int low, int high){
       int mid = (low + high)/2;
       if (mid == low)
@@ -15,26 +15,43 @@ int binarySearch(int arr[],int toFind,int low, int high){
       }
 }
 
-
 void main(){
-    int n,ser,found = 0;
+
+    struct timespec res;
+    long start, end, time_taken;
+    start = clock();
+
+    long n,ser,found = 0;
     printf("Enter number of elements in the array ");
     scanf("%d",&n);
 
     int arr[n];
     printf("Enter sorted array ");
+
     for(int i =0;i<n;i++){
-        printf("Enter the %d value ",(i+1));
+        printf("Enter the value at index %d ",i);
         scanf("%d",&arr[i]);
     }
 
     printf("Enter the value to search");
     scanf("%d",&ser);
 
-    int res = binarySearch(arr,ser,0,n);
-    if (res == -1) {
-        printf("Element not in array");
+
+    clock_gettime(CLOCK_REALTIME,&res);
+    start = res.tv_nsec;
+
+
+    int result = binarySearch(arr,ser,0,n);
+    if (result == -1) {
+        printf("Element not in array\n");
     }
     else
-        printf("Element at index %d",res);
+        printf("Element at index %d\n",result);
+
+
+    clock_gettime(CLOCK_REALTIME,&res);
+    end = res.tv_nsec;
+
+    time_taken = (end - start);
+    printf("Time taken for execution = %d ns", time_taken);
 }
